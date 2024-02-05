@@ -1,6 +1,13 @@
 ---@type ChadrcConfig
 local M = {}
 
+local colors = {
+  white = "#D3C6AA",
+  darker_black = "#272f35",
+  black2 = "#323a40",
+  red = "#e67e80",
+}
+
 M.ui = {
   theme = "everforest",
   transparency = true,
@@ -17,32 +24,14 @@ M.ui = {
     selected_item_bg = "colored",
   },
 
-  -- disable
-  nvdash = {
-    enabled = false,
-  },
-  tabufline = {
-    enabled = false,
-  },
-}
-
-M.plugins = "custom.plugins"
-M.mappings = require "custom.mappings"
-
-local colors = {
-  white = "#D3C6AA",
-  darker_black = "#272f35",
-  black2 = "#323a40",
-  red = "#e67e80",
-}
-
-local function colorizer()
-  local ColorOverrides = {
-    -- telescope
-    TelescopeBorder = { fg = colors.darker_black, bg = colors.darker_black },
-    TelescopePromptBorder = { fg = colors.black2, bg = colors.black2 },
+  hl_add = {
     TelescopeResultsNormal = { bg = colors.darker_black },
     TelescopePreviewNormal = { bg = colors.darker_black },
+  },
+
+  hl_override = {
+    TelescopeBorder = { fg = colors.darker_black, bg = colors.darker_black },
+    TelescopePromptBorder = { fg = colors.black2, bg = colors.black2 },
     TelescopePromptNormal = { fg = colors.white, bg = colors.black2 },
     TelescopeResultsTitle = { fg = colors.darker_black, bg = colors.darker_black },
     TelescopePromptPrefix = { fg = colors.red, bg = colors.black2 },
@@ -56,13 +45,18 @@ local function colorizer()
     -- float window
     FloatBorder = { fg = colors.darker_black, bg = colors.darker_black },
     NormalFloat = { bg = colors.darker_black },
-  }
+  },
 
-  for hl, col in pairs(ColorOverrides) do
-    vim.api.nvim_set_hl(0, hl, col)
-  end
-end
+  -- disable
+  nvdash = {
+    enabled = false,
+  },
+  tabufline = {
+    enabled = false,
+  },
+}
 
-colorizer()
+M.plugins = "custom.plugins"
+M.mappings = require "custom.mappings"
 
 return M

@@ -13,13 +13,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = "/Users/wintersakura/Library/Mobile Documents/iCloud~md~obsidian/Documents/winter-memo/*",
---   callback = function()
---     vim.cmd [[ObsidianOpen]]
---   end,
--- })
-
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
