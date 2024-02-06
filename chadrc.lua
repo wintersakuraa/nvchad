@@ -118,7 +118,7 @@ M.ui = {
     ["@class"] = { fg = rosepine_palette.foam },
     ["@interface"] = { fg = rosepine_palette.foam },
     ["@namespace"] = { link = "Include" },
-    ["@parameter"] = { fg = rosepine_palette.rose },
+    ["@parameter"] = { fg = rosepine_palette.iris },
 
     -- everforest
     --   TelescopeBorder = { fg = colors.darker_black, bg = colors.darker_black },

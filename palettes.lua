@@ -6,7 +6,6 @@ local everforest_palette = {
 }
 
 local rosepine_palette = {
-  _nc = "#16141f",
   base = "#191724",
   surface = "#1f1d2e",
   overlay = "#26233a",
@@ -18,7 +17,7 @@ local rosepine_palette = {
   rose = "#ebbcba",
   pine = "#31748f",
   foam = "#9ccfd8",
-  iris = "#c4a7e7",
+  iris = "#907aa9",
   highlight_low = "#21202e",
   highlight_med = "#403d52",
   highlight_high = "#524f67",
