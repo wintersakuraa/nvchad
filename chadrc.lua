@@ -33,12 +33,13 @@ M.ui = {
     -- rose-pine
     NormalFloat = { bg = rosepine_palette.base },
     FloatBorder = { fg = rosepine_palette.base, bg = rosepine_palette.base },
+    LineNr = { fg = rosepine_palette.muted },
+    Visual = { bg = rosepine_palette.highlight_med },
+
     CmpPmenu = { bg = rosepine_palette.surface },
     CmpBorder = { fg = rosepine_palette.surface, bg = rosepine_palette.surface },
     CmpDocBorder = { fg = rosepine_palette.base, bg = rosepine_palette.base },
     CmpDoc = { bg = rosepine_palette.base },
-    LineNr = { fg = rosepine_palette.muted },
-    Visual = { bg = rosepine_palette.highlight_med },
 
     TelescopeBorder = { fg = rosepine_palette.base, bg = rosepine_palette.base },
     TelescopePromptBorder = { fg = rosepine_palette.surface, bg = rosepine_palette.surface },
