@@ -1,15 +1,10 @@
+local rosepine_palette = require "custom.palettes"
+
 ---@type ChadrcConfig
 local M = {}
 
-local colors = {
-  white = "#D3C6AA",
-  darker_black = "#272f35",
-  black2 = "#323a40",
-  red = "#e67e80",
-}
-
 M.ui = {
-  theme = "everforest",
+  theme = "rosepine",
   transparency = true,
 
   statusline = {
@@ -25,26 +20,121 @@ M.ui = {
   },
 
   hl_add = {
-    TelescopeResultsNormal = { bg = colors.darker_black },
-    TelescopePreviewNormal = { bg = colors.darker_black },
+    -- rose-pine
+    TelescopeResultsNormal = { bg = rosepine_palette.base },
+    TelescopePreviewNormal = { bg = rosepine_palette.base },
+
+    -- everforest
+    --   TelescopeResultsNormal = { bg = everforest_palette.darker_black },
+    --   TelescopePreviewNormal = { bg = everforest_palette.darker_black },
   },
 
   hl_override = {
-    TelescopeBorder = { fg = colors.darker_black, bg = colors.darker_black },
-    TelescopePromptBorder = { fg = colors.black2, bg = colors.black2 },
-    TelescopePromptNormal = { fg = colors.white, bg = colors.black2 },
-    TelescopeResultsTitle = { fg = colors.darker_black, bg = colors.darker_black },
-    TelescopePromptPrefix = { fg = colors.red, bg = colors.black2 },
+    -- rose-pine
+    NormalFloat = { bg = rosepine_palette.base },
+    FloatBorder = { fg = rosepine_palette.base, bg = rosepine_palette.base },
+    CmpPmenu = { bg = rosepine_palette.surface },
+    CmpBorder = { fg = rosepine_palette.surface, bg = rosepine_palette.surface },
+    CmpDocBorder = { fg = rosepine_palette.base, bg = rosepine_palette.base },
+    CmpDoc = { bg = rosepine_palette.base },
+    LineNr = { fg = rosepine_palette.muted },
+    Visual = { bg = rosepine_palette.highlight_med },
 
-    -- cmp
-    CmpPmenu = { bg = colors.darker_black },
-    CmpBorder = { fg = colors.darker_black, bg = colors.darker_black },
-    CmpDocBorder = { fg = colors.black2, bg = colors.black2 },
-    CmpDoc = { bg = colors.black2 },
+    TelescopeBorder = { fg = rosepine_palette.base, bg = rosepine_palette.base },
+    TelescopePromptBorder = { fg = rosepine_palette.surface, bg = rosepine_palette.surface },
+    TelescopePromptNormal = { fg = rosepine_palette.text, bg = rosepine_palette.surface },
+    TelescopePromptPrefix = { fg = rosepine_palette.love, bg = rosepine_palette.surface },
+    TelescopeSelection = { fg = rosepine_palette.text, bg = rosepine_palette.overlay },
 
-    -- float window
-    FloatBorder = { fg = colors.darker_black, bg = colors.darker_black },
-    NormalFloat = { bg = colors.darker_black },
+    Type = { fg = rosepine_palette.foam },
+    Typedef = { link = "Type" },
+    Boolean = { fg = rosepine_palette.rose },
+    String = { fg = rosepine_palette.gold },
+    Character = { fg = rosepine_palette.gold },
+    Conditional = { fg = rosepine_palette.pine },
+    Constant = { fg = rosepine_palette.gold },
+    Define = { fg = rosepine_palette.iris },
+    Delimiter = { fg = rosepine_palette.subtle },
+    Function = { fg = rosepine_palette.rose },
+    Include = { fg = rosepine_palette.pine },
+    Keyword = { fg = rosepine_palette.pine },
+    Operator = { fg = rosepine_palette.subtle },
+    Tag = { fg = rosepine_palette.foam },
+    Comment = { fg = rosepine_palette.muted },
+
+    ["@constant"] = { fg = rosepine_palette.gold },
+    ["@constant.builtin"] = { fg = rosepine_palette.love },
+
+    ["@module"] = { fg = rosepine_palette.text },
+    ["@module.builtin"] = { fg = rosepine_palette.text },
+
+    ["@string"] = { link = "String" },
+    ["@string.escape"] = { fg = rosepine_palette.pine },
+    ["@string.special"] = { link = "String" },
+
+    ["@type"] = { fg = rosepine_palette.foam },
+    ["@type.builtin"] = { fg = rosepine_palette.foam },
+    ["@type.definition"] = { fg = rosepine_palette.foam },
+    ["@type.qualifier"] = { fg = rosepine_palette.foam },
+
+    ["@property"] = { fg = rosepine_palette.foam },
+
+    ["@function"] = { fg = rosepine_palette.rose },
+    ["@function.call"] = { fg = rosepine_palette.rose },
+    ["@function.builtin"] = { fg = rosepine_palette.love },
+    ["@function.macro"] = { link = "Function" },
+    ["@function.method"] = { fg = rosepine_palette.rose },
+    ["@function.method.call"] = { fg = rosepine_palette.iris },
+
+    ["@constructor"] = { fg = rosepine_palette.foam },
+    ["@operator"] = { link = "Operator" },
+
+    ["@keyword"] = { link = "Keyword" },
+    ["@keyword.function"] = { link = "Keyword" },
+    ["@keyword.operator"] = { fg = rosepine_palette.pine },
+    ["@keyword.import"] = { fg = rosepine_palette.pine },
+    ["@keyword.storage"] = { fg = rosepine_palette.foam },
+    ["@keyword.repeat"] = { fg = rosepine_palette.pine },
+    ["@keyword.return"] = { fg = rosepine_palette.pine },
+    ["@keyword.debug"] = { fg = rosepine_palette.rose },
+    ["@keyword.exception"] = { fg = rosepine_palette.pine },
+    ["@keyword.conditional"] = { fg = rosepine_palette.pine },
+    ["@keyword.conditional.ternary"] = { fg = rosepine_palette.pine },
+
+    ["@punctuation.delimiter"] = { fg = rosepine_palette.subtle },
+    ["@punctuation.bracket"] = { fg = rosepine_palette.subtle },
+    ["@punctuation.special"] = { fg = rosepine_palette.subtle },
+
+    ["@comment"] = { link = "Comment" },
+
+    ["@tag"] = { link = "Tag" },
+    ["@tag.attribute"] = { fg = rosepine_palette.iris },
+    ["@tag.delimiter"] = { fg = rosepine_palette.subtle },
+
+    ["@method"] = { fg = rosepine_palette.rose },
+    ["@method.call"] = { fg = rosepine_palette.rose },
+    ["@field"] = { fg = rosepine_palette.foam },
+    ["@class"] = { fg = rosepine_palette.foam },
+    ["@interface"] = { fg = rosepine_palette.foam },
+    ["@namespace"] = { link = "Include" },
+    ["@parameter"] = { fg = rosepine_palette.rose },
+
+    -- everforest
+    --   TelescopeBorder = { fg = colors.darker_black, bg = colors.darker_black },
+    --   TelescopePromptBorder = { fg = colors.black2, bg = colors.black2 },
+    --   TelescopePromptNormal = { fg = colors.white, bg = colors.black2 },
+    --   TelescopeResultsTitle = { fg = colors.darker_black, bg = colors.darker_black },
+    --   TelescopePromptPrefix = { fg = colors.red, bg = colors.black2 },
+    --
+    --   -- cmp
+    --   CmpPmenu = { bg = colors.darker_black },
+    --   CmpBorder = { fg = colors.darker_black, bg = colors.darker_black },
+    --   CmpDocBorder = { fg = colors.black2, bg = colors.black2 },
+    --   CmpDoc = { bg = colors.black2 },
+    --
+    --   -- float window
+    --   FloatBorder = { fg = colors.darker_black, bg = colors.darker_black },
+    --   NormalFloat = { bg = colors.darker_black },
   },
 
   -- disable
