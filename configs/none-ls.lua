@@ -52,7 +52,16 @@ local opts = {
     null_ls.builtins.code_actions.eslint_d,
 
     null_ls.builtins.diagnostics.deno_lint,
-    null_ls.builtins.formatting.deno_fmt,
+    null_ls.builtins.formatting.deno_fmt.with {
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "typescript",
+        "typescriptreact",
+      },
+    },
 
     -- lua
     null_ls.builtins.formatting.stylua,
