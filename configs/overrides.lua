@@ -99,16 +99,4 @@ M.mason = {
   },
 }
 
-M.ui = {
-  tabufline = {
-    enabled = false,
-  },
-
-  statusline = {
-    theme = "minimal",
-    separator_style = "default",
-    overriden_modules = nil,
-  },
-}
-
 return M
