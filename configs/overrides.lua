@@ -19,7 +19,6 @@ M.treesitter = {
     "query",
     "regex",
     "toml",
-    "tsx",
     "vim",
     "vimdoc",
     "yaml",
