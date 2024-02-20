@@ -3,6 +3,8 @@ local function titleCase(first, rest)
 end
 
 local options = {
+  new_notes_location = "current_dir",
+
   workspaces = {
     {
       name = "winter-memo",
@@ -20,10 +22,6 @@ local options = {
   completion = {
     nvim_cmp = true,
     min_chars = 2,
-    new_notes_location = "current_dir",
-    prepend_note_id = true,
-    prepend_note_path = false,
-    use_path_only = false,
   },
 
   templates = {
@@ -32,6 +30,16 @@ local options = {
     time_format = "%H:%M",
     substitutions = {},
   },
+
+  wiki_link_func = function(opts)
+    if opts.id == nil then
+      return string.format("[[%s]]", opts.label)
+    elseif opts.label ~= opts.id then
+      return string.format("[[%s|%s]]", opts.id, opts.label)
+    else
+      return string.format("[[%s]]", opts.id)
+    end
+  end,
 
   follow_url_func = function(url)
     vim.fn.jobstart { "open", url }
