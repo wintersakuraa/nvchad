@@ -59,11 +59,12 @@ M.ui = {
     Function = { fg = rosepine_palette.rose },
     Include = { fg = rosepine_palette.pine },
     Keyword = { fg = rosepine_palette.pine },
+    Special = { fg = rosepine_palette.pine },
     Operator = { fg = rosepine_palette.subtle },
     Tag = { fg = rosepine_palette.foam },
     Comment = { fg = rosepine_palette.muted },
 
-    ["@constant"] = { fg = rosepine_palette.gold },
+    ["@constant"] = { fg = rosepine_palette.text },
     ["@constant.builtin"] = { fg = rosepine_palette.love },
 
     ["@module"] = { fg = rosepine_palette.text },
