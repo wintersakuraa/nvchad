@@ -4,22 +4,33 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
-local handlers = {
-  ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-  ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+lspconfig.eslint.setup {
+  on_attach = function(_, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+  capabilities = capabilities,
+  root_dir = util.root_pattern(".eslintrc.json", ".eslintrc.js"),
+  settings = {
+    codeAction = {
+      showDocumentation = {
+        enable = true,
+      },
+    },
+  },
 }
 
 lspconfig.denols.setup {
   on_attach = on_attach,
   root_dir = util.root_pattern("deno.json", "deno.jsonc"),
   capabilities = capabilities,
-  handlers = handlers,
 }
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  handlers = handlers,
   root_dir = util.root_pattern "package.json",
   single_file_support = false,
   init_options = {
@@ -35,7 +46,6 @@ lspconfig.gopls.setup {
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
   root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-  handlers = handlers,
   settings = {
     gopls = {
       gofumpt = true,

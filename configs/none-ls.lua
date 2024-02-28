@@ -13,55 +13,13 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local opts = {
   sources = {
+    null_ls.builtins.formatting.prettierd,
+
     -- golang
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.goimports,
     null_ls.builtins.formatting.golines,
     null_ls.builtins.diagnostics.golangci_lint,
-
-    -- formatting with prettierd (except js/ts files)
-    null_ls.builtins.formatting.prettierd.with {
-      filetypes = {
-        "css",
-        "scss",
-        "less",
-        "html",
-        "json",
-        "jsonc",
-        "yaml",
-        "markdown",
-        "markdown.mdx",
-        "graphql",
-        "handlebars",
-      },
-    },
-
-    -- js/ts
-    null_ls.builtins.diagnostics.eslint_d.with {
-      condition = function(utils)
-        return utils.root_has_file { ".eslintrc.json", ".eslintrc.js" }
-      end,
-    },
-
-    null_ls.builtins.formatting.eslint_d.with {
-      condition = function(utils)
-        return utils.root_has_file { ".eslintrc.json", ".eslintrc.js" }
-      end,
-    },
-
-    null_ls.builtins.code_actions.eslint_d,
-
-    null_ls.builtins.diagnostics.deno_lint,
-    null_ls.builtins.formatting.deno_fmt.with {
-      filetypes = {
-        "javascript",
-        "javascriptreact",
-        "json",
-        "jsonc",
-        "typescript",
-        "typescriptreact",
-      },
-    },
 
     -- lua
     null_ls.builtins.formatting.stylua,
