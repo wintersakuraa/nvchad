@@ -24,6 +24,8 @@ M.ui = {
     TelescopeResultsNormal = { bg = rosepine_palette.base },
     TelescopePreviewNormal = { bg = rosepine_palette.base },
 
+    ["@parameter.go"] = { fg = rosepine_palette.iris },
+
     -- everforest
     --   TelescopeResultsNormal = { bg = everforest_palette.darker_black },
     --   TelescopePreviewNormal = { bg = everforest_palette.darker_black },
@@ -63,6 +65,7 @@ M.ui = {
     Operator = { fg = rosepine_palette.subtle },
     Tag = { fg = rosepine_palette.foam },
     Comment = { fg = rosepine_palette.muted },
+    Identifier = { fg = rosepine_palette.foam },
 
     ["@constant"] = { fg = rosepine_palette.text },
     ["@constant.builtin"] = { fg = rosepine_palette.love },
@@ -75,7 +78,7 @@ M.ui = {
     ["@string.special"] = { link = "String" },
 
     ["@type"] = { fg = rosepine_palette.foam },
-    ["@type.builtin"] = { fg = rosepine_palette.foam },
+    ["@type.builtin"] = { fg = rosepine_palette.foam, bold = true },
     ["@type.definition"] = { fg = rosepine_palette.foam },
     ["@type.qualifier"] = { fg = rosepine_palette.foam },
 
