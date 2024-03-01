@@ -66,6 +66,7 @@ M.ui = {
     Tag = { fg = rosepine_palette.foam },
     Comment = { fg = rosepine_palette.muted },
     Identifier = { fg = rosepine_palette.foam },
+    Repeat = { fg = rosepine_palette.pine },
 
     ["@constant"] = { fg = rosepine_palette.text },
     ["@constant.builtin"] = { fg = rosepine_palette.love },
