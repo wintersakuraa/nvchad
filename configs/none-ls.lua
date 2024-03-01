@@ -13,7 +13,21 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local opts = {
   sources = {
-    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.prettierd.with {
+      filetypes = {
+        "css",
+        "scss",
+        "less",
+        "html",
+        "json",
+        "jsonc",
+        "yaml",
+        "markdown",
+        "markdown.mdx",
+        "graphql",
+        "handlebars",
+      },
+    },
 
     -- golang
     null_ls.builtins.formatting.gofumpt,
