@@ -38,6 +38,9 @@ M.general = {
     ["sv"] = { ":vsplit<Return><C-w>w", "Split vertical", opts },
     ["<C-c>"] = { "<C-w>c", "Close window", opts },
 
+    -- telescope
+    ["<leader>fd"] = { ":lua vim.diagnostic.setqflist()<CR>", "Find Diagnostics", opts },
+
     -- nvim tree
     ["<leader>e"] = { "<cmd> NvimTreeToggle<CR>", "Toggle nvimtree", opts },
 
@@ -49,6 +52,17 @@ M.general = {
     ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "Navigate Right", opts },
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "Navigate Down", opts },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "Navigate Up", opts },
+
+    -- obsidian
+    ["<leader>fn"] = { "<cmd> ObsidianQuickSwitch<CR>", "Find Notes", opts },
+    ["<leader>od"] = { "<cmd> ObsidianToday<CR>", "Daily Note: Today", opts },
+    ["<leader>oy"] = { "<cmd> ObsidianToday - 1<CR>", "Daily Note: Yesterday", opts },
+    ["<leader>on"] = { "<cmd> ObsidianToday + 1<CR>", "Daily Note: Tomorrow", opts },
+    ["<leader>ot"] = { "<cmd> ObsidianTemplate<CR>", "Obsidian Template", opts },
+    ["<leader>oo"] = { "<cmd> ObsidianOpen<CR>", "Obsidian Open", opts },
+
+    -- fugitive
+    ["<C-g>"] = { "<cmd> G<CR>", "Fugitive", opts },
 
     -- harpoon
     ["<leader>a"] = {
@@ -110,17 +124,6 @@ M.general = {
       "",
       opts,
     },
-
-    -- obsidian
-    ["<leader>fn"] = { "<cmd> ObsidianQuickSwitch<CR>", "Find Notes", opts },
-    ["<leader>od"] = { "<cmd> ObsidianToday<CR>", "Daily Note: Today", opts },
-    ["<leader>oy"] = { "<cmd> ObsidianToday - 1<CR>", "Daily Note: Yesterday", opts },
-    ["<leader>on"] = { "<cmd> ObsidianToday + 1<CR>", "Daily Note: Tomorrow", opts },
-    ["<leader>ot"] = { "<cmd> ObsidianTemplate<CR>", "Obsidian Template", opts },
-    ["<leader>oo"] = { "<cmd> ObsidianOpen<CR>", "Obsidian Open", opts },
-
-    -- fugitive
-    ["<C-g>"] = { "<cmd> G<CR>", "Fugitive", opts },
   },
 
   x = {

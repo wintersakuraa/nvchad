@@ -69,7 +69,9 @@ local plugins = {
     lazy = false,
     opts = {
       delete_to_trash = true,
-      lsp_rename_autosave = true,
+      lsp_file_methods = {
+        autosave_changes = true,
+      },
       view_options = {
         show_hidden = true,
       },
