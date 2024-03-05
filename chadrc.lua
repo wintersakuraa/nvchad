@@ -24,8 +24,6 @@ M.ui = {
     TelescopeResultsNormal = { bg = rosepine_palette.base },
     TelescopePreviewNormal = { bg = rosepine_palette.base },
 
-    ["@parameter.go"] = { fg = rosepine_palette.iris },
-
     -- everforest
     --   TelescopeResultsNormal = { bg = everforest_palette.darker_black },
     --   TelescopePreviewNormal = { bg = everforest_palette.darker_black },
@@ -87,10 +85,10 @@ M.ui = {
 
     ["@function"] = { fg = rosepine_palette.rose },
     ["@function.call"] = { fg = rosepine_palette.rose },
-    ["@function.builtin"] = { fg = rosepine_palette.love },
+    ["@function.builtin"] = { fg = rosepine_palette.rose, bold = true },
     ["@function.macro"] = { link = "Function" },
     ["@function.method"] = { fg = rosepine_palette.rose },
-    ["@function.method.call"] = { fg = rosepine_palette.iris },
+    ["@function.method.call"] = { fg = rosepine_palette.rose },
 
     ["@constructor"] = { fg = rosepine_palette.foam },
     ["@operator"] = { link = "Operator" },
@@ -120,10 +118,11 @@ M.ui = {
     ["@method"] = { fg = rosepine_palette.rose },
     ["@method.call"] = { fg = rosepine_palette.rose },
     ["@field"] = { fg = rosepine_palette.foam },
+    ["@variable.member"] = { fg = rosepine_palette.foam },
     ["@class"] = { fg = rosepine_palette.foam },
     ["@interface"] = { fg = rosepine_palette.foam },
     ["@namespace"] = { link = "Include" },
-    ["@parameter"] = { fg = rosepine_palette.iris },
+    ["@variable.parameter"] = { fg = rosepine_palette.iris },
 
     -- everforest
     --   TelescopeBorder = { fg = colors.darker_black, bg = colors.darker_black },
