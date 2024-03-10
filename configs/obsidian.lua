@@ -3,6 +3,7 @@ local function titleCase(first, rest)
 end
 
 local options = {
+  notes_subdir = "In",
   new_notes_location = "current_dir",
 
   workspaces = {
@@ -48,10 +49,8 @@ local options = {
   note_id_func = function(title)
     local suffix = ""
     if title ~= nil then
-      -- If title is given, capitalize each word
       return string.gsub(title, "(%a)([%w_']*)", titleCase)
     else
-      -- If title is nil, just add 4 random uppercase letters to the timestamp
       for _ = 1, 4 do
         suffix = suffix .. string.char(math.random(65, 90))
       end
@@ -99,33 +98,25 @@ local options = {
     highlight_text = { hl_group = "ObsidianHighlightText" },
     tags = { hl_group = "ObsidianTag" },
     hl_groups = {
-      ObsidianTodo = { bold = true, fg = "#f78c6c" },
-      ObsidianDone = { bold = true, fg = "#a6e3a1" },
-      ObsidianTilde = { bold = true, fg = "#f38ba8" },
-      ObsidianBullet = { bold = true, fg = "#94e2d5" },
-      ObsidianRefText = { underline = true, fg = "#94e2d5" },
-      ObsidianExtLinkIcon = { fg = "#94e2d5" },
-      ObsidianTag = { italic = true, fg = "#89ddff" },
+      ObsidianTodo = { bold = true, fg = "#f6c177" },
+      ObsidianDone = { bold = true, fg = "#31748f" },
+      ObsidianTilde = { bold = true, fg = "#eb6f92" },
+      ObsidianBullet = { bold = true, fg = "#9ccfd8" },
+      ObsidianRefText = { underline = true, fg = "#9ccfd8" },
+      ObsidianExtLinkIcon = { fg = "#9ccfd8" },
+      ObsidianTag = { italic = true, fg = "#907aa9" },
       ObsidianHighlightText = { bg = "#75662e" },
     },
   },
 
   attachments = {
     img_folder = "Extras/Attachments",
-    -- A function that determines the text to insert in the note when pasting an image.
-    -- It takes two arguments, the `obsidian.Client` and a plenary `Path` to the image file.
-    -- This is the default implementation.
-    ---@param client obsidian.Client
-    ---@param path Path the absolute path to the image file
-    ---@return string
     img_text_func = function(client, path)
       local link_path
       local vault_relative_path = client:vault_relative_path(path)
       if vault_relative_path ~= nil then
-        -- Use relative path if the image is saved in the vault dir.
         link_path = vault_relative_path
       else
-        -- Otherwise use the absolute path.
         link_path = tostring(path)
       end
       local display_name = vim.fs.basename(link_path)
