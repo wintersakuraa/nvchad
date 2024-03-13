@@ -4,7 +4,7 @@ end
 
 local options = {
   notes_subdir = "In",
-  new_notes_location = "current_dir",
+  new_notes_location = "notes_subdir",
 
   workspaces = {
     {
